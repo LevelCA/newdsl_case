@@ -1,2 +1,2 @@
 # newdsl_case
-The ts2wasm testcase of newdsl
+Add syntax cases that are currently not supported by ts2wasm in debugging dsl.
