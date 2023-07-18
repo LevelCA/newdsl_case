@@ -1,42 +1,22 @@
-export type Jack = string | number | boolean
-export interface Petter { [key: string]: Jack }
-
-export interface Zhangsan {
-    name?: Petter
-    age?: Petter
+interface A {
+    name?: string;
+    age?: number;
 }
 
-const A = {
-    age: {
-        'A': "a",
-        'S': "s",
-        'D': "D",
-        'F': "f"
-    }
+const a = {
+    name: 'zhangsan'
 }
 
-class China {
-    id: string
-    type: string
-    isStatic: boolean = true
-    opts: Zhangsan
-
+class C {
+    person: A
+    address: string
     parentId: string = ''
 
-    constructor(id: string, type: string, isStatic: boolean, opts: Zhangsan) {
-        this.id = id;
-        this.type = type;
-        this.opts = opts
-        this.isStatic = isStatic
+    constructor(p: A, add: string, par: string) {
+        this.person = p;
+        this.address = add;
+        this.parentId = par
     }
 }
 
-const nodeMap__: { [key: string]: China } = {}
-
-function hello(id: string, tag: string, isStatic: boolean, opts: Zhangsan, parentId: string, withParentId?: boolean): China {
-    if (withParentId) id = parentId + '_' + id
-    let node = nodeMap__[id]
-    return node
-}
-
-const B: China = hello('1', 'column', true, A, '', false);
+const c: C = new C(a, 'wuhan', 'hubei');
