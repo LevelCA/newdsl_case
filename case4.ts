@@ -3,7 +3,7 @@ interface A {
     age?: number;
 }
 
-const a = {
+const a:A = {
     name: 'zhangsan'
 }
 
@@ -20,3 +20,4 @@ class C {
 }
 
 const c: C = new C(a, 'wuhan', 'hubei');
+console.log(c.person.name);
